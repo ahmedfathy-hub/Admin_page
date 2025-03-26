@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="icon" type="image/x-icon" href="images\user-gear.png">
+    <link rel="stylesheet" href="CSS_Adminpage.css" class="style">
+</head>
+<body>
+    <div style="background-color: darkorchid;">
+        <div>
+            <h1 style="text-align: center; padding-top: 50px; font-size: 50px;"> Admin Page </h1>
+            <h3 style="text-align: center;">Add Products and Categories</h3><br><br>
+        </div>
+        <div style="float: inline-end;">
+            <button id="logoutBtn" class="formbold-btn" >Logout</button>
+        </div>
+    </div>
+
+    <section>
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <div class="formbold-input-wrapp formbold-mb-3">
+                
+                <label for="item_id" class="formbold-form-label"> Product Code : </label>
+                <div>
+                    <input
+                    type="number"
+                    name="Productcode"
+                    id="ProductCode"
+                    placeholder="Product Code"
+                    class="formbold-form-input"
+                    />
+                </div>
+                
+
+                <div class="formbold-mb-3"></div>
+                    <label for="firstname" class="formbold-form-label"> Product Name : </label>
+                    <div>
+                        <input
+                        type="text"
+                        name="Productname"
+                        id="ProductName"
+                        placeholder="Product Name"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                </div>
+        
+                <div class="formbold-mb-3">
+                    <label class="formbold-form-label">Product Category :</label>
+                    <select class="formbold-form-input" name="occupation" id="ProductCategory">
+                        <option selected disabled>Select Category</option>
+                        <option value="Men clothes">Men clothes</option>
+                        <option value="Women clothes">Women clothes</option>
+                        <option value="Children clothes">Children clothes</option>
+                    </select>
+                </div>
+        
+                <div class="formbold-mb-3">
+                    <label for="email" class="formbold-form-label"> Price : </label>
+                    <input
+                        type="number"
+                        name="price"
+                        id="Price"
+                        placeholder="Price in EGP"
+                        class="formbold-form-input"
+                    />
+                </div>
+        
+                <div class="formbold-mb-3">
+                <label for="address" class="formbold-form-label"> Quantity in Stock : </label>
+        
+                <input
+                    type="number"
+                    name="quantity"
+                    id="QuantityInStock"
+                    placeholder="Quantity in Stock"
+                    class="formbold-form-input formbold-mb-3"
+                />
+                </div>
+        
+                <div class="formbold-input-flex">
+                <div>
+                    <label for="post" class="formbold-form-label"> Product Description : </label>
+                    <textarea id="description" class="formbold-form-input formbold-mb-3" name="w3review" rows="10" cols="10"></textarea>
+                </div>
+                </div>
+        
+                <div class="formbold-mb-3">
+                <label for="upload" class="formbold-form-label">
+                    Upload Product image :
+                </label>
+                <input
+                    type="file"
+                    name="upload"
+                    id="upload"
+                    class="formbold-form-input formbold-form-file"
+                />
+                </div>
+    
+                <button id="addProductBtn" class="formbold-btn" >Add Product</button>
+                <button id="deleteProductBtn" class="formbold-btn" >Delete Product</button>
+                <button id="updateProductBtn" class="formbold-btn" >Update Product</button>
+                <button id="searchProductBtn" class="formbold-btn" >Search by Code and Category</button>
+                <button id="displayProductBtn" class="formbold-btn" >Display Products</button>
+                
+            </div>
+        </div>
+    </section>
+
+    <section>
+            <div class="container py-2">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th>Name </th>
+                            <th>Code</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity in Stock</th>
+                            <th>Description</th>
+                            <th>product image</th>
+                        </tr>
+                    </thead>
+                    <tbody id="showData">
+    
+                    </tbody>
+                </table> 
+    </section>
+
+    <!-- add firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
+    <script src="JS_Adminpage.js"></script>
+
+
+    
+</body>
+</html>
+
+
+<!-- <td><img src="${data.imageUrl || ''}" width="50"></td> -->
